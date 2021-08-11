@@ -12,13 +12,16 @@
     "react-scripts": "4.0.3",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.3",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^1.1.2",
+    "homepage": "http://erin326.github.io/rick-and-morty-project"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "rick-and-morty-project -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -37,5 +40,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
   }
 }

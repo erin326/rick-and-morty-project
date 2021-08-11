@@ -4,11 +4,15 @@ function NavBar() {
     
 const linkStyles = {
     width: "100px",
-    padding: "12px",
-    margin: "0 6px 6px",
-    background: "blue",
+    padding: "10px",
+    margin: "10px 10px 10px ",
+    background: "magenta",
     textDecoration: "none",
     color: "white",
+    fontSize: '18px'
+   
+    
+    
   };
 
    return (

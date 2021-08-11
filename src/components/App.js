@@ -1,5 +1,5 @@
 import { Switch, Route } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import NavBar from './NavBar';
 import Header from './Header';
 import CharacterHomePage from './CharacterHomePage';
@@ -8,30 +8,36 @@ import Favorites from './Favorites';
 
 function App() {
 
+
   const [characters, setCharacters] = useState([]);
 
-  useEffect(() => {
-    fetch('https://rickandmortyapi.com/api/character')
-    .then(resp => resp.json())
-    .then(data => {
-      console.log(data.results)
-      setCharacters(data.results)
-    })
+  const [favorites, setFavorites] = useState([]);
 
-  }, [])
+  function handleAddFavorite(id) {
+      characters.map(character => {
+          if(character.id === id) {
+              setFavorites([...favorites, character])
+          }else{
+              return character;
+          }
+      })
+  }
+
+
 
   return (
     <div className="App">
+      <Header />
       <NavBar />
       <Switch>
       <Route exact path='/episodes'>
         <EpisodePage />
         </Route>
         <Route exact path='/favorites'>
-          <Favorites />
+          <Favorites favorites={favorites} />
         </Route>
         <Route exact path='/'>
-          <CharacterHomePage characters={characters}/>
+          <CharacterHomePage onAddFavorite={handleAddFavorite} characters={characters} setCharacters={setCharacters}/>
         </Route>
       
      

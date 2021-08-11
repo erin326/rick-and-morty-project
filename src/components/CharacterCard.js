@@ -1,7 +1,7 @@
 import { Card, Image } from 'semantic-ui-react'
 
-function CharacterCard({ id, name, image, species, gender, status, origin }) {
-    console.log(origin)
+function CharacterCard({ onAddFavorite, id, name, image, species, gender, status, origin }) {
+  
     return (
         <div className='cards-container'>
         <Card className='cards'>
@@ -22,6 +22,8 @@ function CharacterCard({ id, name, image, species, gender, status, origin }) {
                     <Card.Content extra>
                         <span>Status: {status}</span>
                     </Card.Content>
+                    <span><button className='favorite-button' onClick={onAddFavorite}>Add to Favorites</button></span>
+                    <br></br>
 
                 </Card.Content>
 

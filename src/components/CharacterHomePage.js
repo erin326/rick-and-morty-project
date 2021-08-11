@@ -3,7 +3,7 @@ import CharacterList from './CharacterList';
 import SearchCharacters from './SearchCharacters';
 import FilterCharacters from './FilterCharacters';
 
-function CharacterPage({onAddFavorite, characters, setCharacters }) {
+function CharacterPage({favorites, setFavorites, characters, setCharacters }) {
 
     const [selectedCategory, setSelectedCategory] = useState('All');
 
@@ -12,10 +12,11 @@ function CharacterPage({onAddFavorite, characters, setCharacters }) {
       fetch('https://rickandmortyapi.com/api/character')
       .then(resp => resp.json())
       .then(data => {
+          console.log(data.results)
         setCharacters(data.results)
       })
   
-    }, [])
+    }, [setCharacters])
 
     const [search, setSearch] = useState('');
 
@@ -30,12 +31,23 @@ function CharacterPage({onAddFavorite, characters, setCharacters }) {
         }
     })
 
+    function handleAddFavorite(id) {
+        console.log('clicked')
+          characters.map(character => {
+              if(character.id === id) {
+                  return setFavorites([...favorites, character])
+              }else{
+                  return character;
+              }
+          })
+      }
+
     return(
         <div>
             <FilterCharacters setSelectedCategory={setSelectedCategory} />
             <SearchCharacters search={search} setSearch={setSearch} />
             
-            <CharacterList onAddFavorite={onAddFavorite} characters={searchedCharacters} />
+            <CharacterList onAddFavorite={handleAddFavorite} characters={searchedCharacters} />
 
         </div>
     )

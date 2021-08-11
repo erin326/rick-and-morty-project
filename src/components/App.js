@@ -13,15 +13,7 @@ function App() {
 
   const [favorites, setFavorites] = useState([]);
 
-  function handleAddFavorite(id) {
-      characters.map(character => {
-          if(character.id === id) {
-              setFavorites([...favorites, character])
-          }else{
-              return character;
-          }
-      })
-  }
+  
 
 
 
@@ -37,7 +29,7 @@ function App() {
           <Favorites favorites={favorites} />
         </Route>
         <Route exact path='/'>
-          <CharacterHomePage onAddFavorite={handleAddFavorite} characters={characters} setCharacters={setCharacters}/>
+          <CharacterHomePage favorites={favorites} setFavorites={setFavorites} characters={characters} setCharacters={setCharacters}/>
         </Route>
       
      

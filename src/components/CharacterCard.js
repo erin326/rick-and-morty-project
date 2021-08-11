@@ -22,7 +22,7 @@ function CharacterCard({ onAddFavorite, id, name, image, species, gender, status
                     <Card.Content extra>
                         <span>Status: {status}</span>
                     </Card.Content>
-                    <span><button className='favorite-button' onClick={onAddFavorite}>Add to Favorites</button></span>
+                    <span><button className='favorite-button' onClick={() => onAddFavorite(id)}>Add to Favorites</button></span>
                     <br></br>
 
                 </Card.Content>

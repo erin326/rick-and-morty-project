@@ -1,7 +1,7 @@
 import { Card, Image, Button } from 'semantic-ui-react'
 import { useState } from 'react';
 
-function CharacterCard({ characters,  id, name, image, species, gender, status, origin, favorites, setFavorites, setCharacters }) {
+function CharacterCard({ characters,  id, name, image, species, gender, status, origin, favorites, setFavorites }) {
 
     const [isFavorited, setIsFavorited] = useState(false);
     
@@ -18,13 +18,12 @@ function CharacterCard({ characters,  id, name, image, species, gender, status, 
                   
                   return character;
               }
-            
           })
-          setCharacters(newCharacters)
+    
       }
-  
-    // const buttonText = isFavorited ? 'Added to Favorites' : 'Add to Favorites';
 
+  
+    
     return (
         <div className='cards-container'>
         <Card className='cards'>

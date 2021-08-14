@@ -1,5 +1,5 @@
 import { Switch, Route } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import NavBar from './NavBar';
 import Header from './Header';
 import CharacterHomePage from './CharacterHomePage';
@@ -12,6 +12,12 @@ function App() {
   const [characters, setCharacters] = useState([]);
 
   const [favorites, setFavorites] = useState([]);
+
+  // useEffect(async () => {
+  //   let savedFavorite = await localStorage.getItem('Favorite')
+
+  // }, [])
+
 
   
 

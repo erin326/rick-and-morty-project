@@ -1,11 +1,35 @@
-import { Card, Image } from 'semantic-ui-react'
+import { Card, Image, Button } from 'semantic-ui-react'
+import { useState } from 'react';
 
-function CharacterCard({ onAddFavorite, id, name, image, species, gender, status, origin }) {
+function CharacterCard({ characters,  id, name, image, species, gender, status, origin, favorites, setFavorites, setCharacters }) {
+
+    const [isFavorited, setIsFavorited] = useState(false);
+    
+
+    function handleAddFavorite(id) {
+        console.log('clicked')
+         const newCharacters =  characters.filter(character => {
+              if(character.id === id) {
+               
+                 setFavorites([...favorites, character])
+                  setIsFavorited(isFavorited => !isFavorited);
+                  
+              }else{
+                  
+                  return character;
+              }
+            
+          })
+          setCharacters(newCharacters)
+      }
   
+    // const buttonText = isFavorited ? 'Added to Favorites' : 'Add to Favorites';
+
     return (
         <div className='cards-container'>
         <Card className='cards'>
             <div>
+           
                 <div className='image'>
                     <Image src={image} alt={name} />
                 </div>
@@ -21,8 +45,12 @@ function CharacterCard({ onAddFavorite, id, name, image, species, gender, status
                     </Card.Meta>
                     <Card.Content extra>
                         <span>Status: {status}</span>
+                  
+                  
                     </Card.Content>
-                    <span><button className='favorite-button' onClick={() => onAddFavorite(id)}>Add to Favorites</button></span>
+                    <Button onClick={() => handleAddFavorite(id)}
+                    icon={isFavorited ? 'heart' : 'heart outline'} />
+                 
                     <br></br>
 
                 </Card.Content>
@@ -34,3 +62,10 @@ function CharacterCard({ onAddFavorite, id, name, image, species, gender, status
 }
 
 export default CharacterCard;
+
+
+// {isFavorited ? (
+//     <button className='favorite-button' onClick={() => onAddFavorite(id)}>Added to Favorites</button>
+//          ) : (
+//               <button onClick={() => onAddFavorite(id)}>Add to Favorites</button>
+//                       )}

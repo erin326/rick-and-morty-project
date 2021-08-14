@@ -31,23 +31,22 @@ function CharacterPage({favorites, setFavorites, characters, setCharacters }) {
         }
     })
 
-    function handleAddFavorite(id) {
-        console.log('clicked')
-          characters.map(character => {
-              if(character.id === id) {
-                  return setFavorites([...favorites, character])
-              }else{
-                  return character;
-              }
-          })
-      }
+    
+  
 
     return(
         <div>
             <FilterCharacters setSelectedCategory={setSelectedCategory} />
             <SearchCharacters search={search} setSearch={setSearch} />
             
-            <CharacterList onAddFavorite={handleAddFavorite} characters={searchedCharacters} />
+            <CharacterList
+            //  isFavorited={isFavorited} 
+            //  onAddFavorite={handleAddFavorite} 
+            favorites={favorites}
+            setFavorites={setFavorites}
+             characters={searchedCharacters}
+             setCharacters={setCharacters}
+             />
 
         </div>
     )

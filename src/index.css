@@ -46,10 +46,11 @@ margin: 50px;
 .App-header {
   margin: 10px 10px 30px ;
   color:  rgb(10, 179, 18);
-  background-image: url(./27617-6-rick-and-morty-clipart.png);
+  background-image: url(./rick-and-morty-rick.png);
   background-size: 30px;
   background-repeat: no-repeat;
   background-position: 510px;
+  
 
 }
 
@@ -71,9 +72,13 @@ margin: 50px;
 }
 .episodes-page {
   background-image: url(./rick-and-morty-31013.png);
-  background-size:1000px;
-  background-position: 350px;
-  background-repeat:space
+ 
+
+  background-position:400px top;
+  background-repeat: no-repeat;
+  background-size: 1000px;
+  
+
 
 }
 

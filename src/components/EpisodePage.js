@@ -1,4 +1,4 @@
-import { useState, useEffect, Suspense } from 'react';
+import { useState, useEffect } from 'react';
 import EpisodeList from './EpisodeList';
 import SearchEpisodes from './SearchEpisodes';
 
@@ -21,13 +21,11 @@ function EpisodePage() {
 
     
     return(
-        <div className='episodes-page'>
-            <Suspense fallback={<div>loading...</div>}>
-        
+        <div>
+
             <SearchEpisodes episodeSearch={episodeSearch} setEpisodeSearch={setEpisodeSearch} />
             <EpisodeList episodes={searchedEpisodes} />
-            </Suspense>
-
+        
         </div>
     )
 }

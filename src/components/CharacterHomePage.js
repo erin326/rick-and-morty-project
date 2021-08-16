@@ -12,8 +12,8 @@ function CharacterPage({favorites, setFavorites, characters, setCharacters }) {
       fetch('https://rickandmortyapi.com/api/character')
       .then(resp => resp.json())
       .then(data => {
-          console.log(data.results)
-        setCharacters(data.results)
+          
+       return setCharacters(data.results)
       })
   
     }, [setCharacters])
@@ -31,17 +31,13 @@ function CharacterPage({favorites, setFavorites, characters, setCharacters }) {
         }
     })
 
-    
-  
 
     return(
-        <div>
+        <div className='home-page'>
             <FilterCharacters setSelectedCategory={setSelectedCategory} />
             <SearchCharacters search={search} setSearch={setSearch} />
             
             <CharacterList
-            //  isFavorited={isFavorited} 
-            //  onAddFavorite={handleAddFavorite} 
             favorites={favorites}
             setFavorites={setFavorites}
              characters={searchedCharacters}

@@ -1,4 +1,5 @@
 function FilterCharacters({ setSelectedCategory }) {
+    
     return(
         <div className='Filter'>
             <select name='filter' onChange={e => setSelectedCategory(e.target.value)}>
@@ -7,8 +8,6 @@ function FilterCharacters({ setSelectedCategory }) {
                 <option value='Dead'>Dead</option>
                 <option value='Male'>Male</option>
                 <option value='Female'>Female</option>
-
-
             </select>
 
         </div>

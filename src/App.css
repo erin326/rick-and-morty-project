@@ -11,6 +11,9 @@
   color: white;
 }
 
+.App {
+  background: url(./rick-and-morty-33922.jpg);
+}
 /*
 .App {
   text-align: center;

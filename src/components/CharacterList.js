@@ -7,12 +7,8 @@ function CharacterList({characters, favorites, setFavorites, setCharacters }) {
         favorites={favorites}
         setFavorites={setFavorites}
         setCharacters={setCharacters}
-        // onAddFavorite={onAddFavorite} 
-        // isFavorited={isFavorited}
         />
     ));
-
-
 
 
     return(

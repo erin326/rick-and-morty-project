@@ -8,7 +8,7 @@ function CharacterCard({ characters,  id, name, image, species, gender, status, 
 
     function handleAddFavorite(id) {
         console.log('clicked')
-         const newCharacters =  characters.filter(character => {
+          characters.filter(character => {
               if(character.id === id) {
                
                  setFavorites([...favorites, character])
@@ -22,6 +22,7 @@ function CharacterCard({ characters,  id, name, image, species, gender, status, 
     
       }
 
+      const icon = isFavorited ? 'heart' : 'heart outline'
   
     
     return (
@@ -47,8 +48,8 @@ function CharacterCard({ characters,  id, name, image, species, gender, status, 
                   
                   
                     </Card.Content>
-                    <Button onClick={() => handleAddFavorite(id)}
-                    icon={isFavorited ? 'heart' : 'heart outline'} />
+                    {favorites ? ( <Button onClick={() => handleAddFavorite(id)}
+                    icon={icon}/> ) : null}
                  
                     <br></br>
 
@@ -61,10 +62,3 @@ function CharacterCard({ characters,  id, name, image, species, gender, status, 
 }
 
 export default CharacterCard;
-
-
-// {isFavorited ? (
-//     <button className='favorite-button' onClick={() => onAddFavorite(id)}>Added to Favorites</button>
-//          ) : (
-//               <button onClick={() => onAddFavorite(id)}>Add to Favorites</button>
-//                       )}

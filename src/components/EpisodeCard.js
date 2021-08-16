@@ -1,8 +1,8 @@
 import { Card } from 'semantic-ui-react';
 
-function EpisodeCard({ id, name, episode, airDate}) {
+function EpisodeCard({ name, episode, airDate}) {
     return(
-        <div className='cards-container'>
+        <div className='episodes-container'>
             <Card className='episode-cards'>
                 <Card.Content>
                     <Card.Header>

@@ -5,11 +5,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: blue;
+ 
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+    
 }
 
 .cards {
@@ -17,26 +21,63 @@ code {
   float: left;
   padding: 20px;
   text-align: horizontal;
-  border:50px black;
+
   
 }
 
 .cards-container {
- margin-left: 30px;
- margin-top: 30px;
- margin-bottom: 30px;
+margin: 50px;
+ 
+}
+
+.episodes-container {
+  margin: 30px 30px 30px;
+
 }
 
 .ui-search {
-  padding: 20px;
-  margin: auto;
+  padding-top: 75px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  margin-left:30px ;
+  
 }
 
 .App-header {
   margin: 10px 10px 30px ;
+  color:  rgb(10, 179, 18);
+  background-image: url(./27617-6-rick-and-morty-clipart.png);
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: 510px;
+
 }
 
+
 .Filter {
-  padding-top: 30px;
-  margin-left: 20px;
+  margin: 30px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
+
 }
+
+
+.home-page{
+  background-image: url(./rick-and-morty-31015.png);
+  background-repeat: no-repeat;
+  background-position:center;
+  
+
+}
+.episodes-page {
+  background-image: url(./rick-and-morty-31013.png);
+  background-size:1000px;
+  background-position: 350px;
+  background-repeat:space
+
+}
+
+.nav-bar {
+  margin-bottom: 30px;
+}
+

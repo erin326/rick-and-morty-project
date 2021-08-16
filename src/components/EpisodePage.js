@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import EpisodeList from './EpisodeList';
 import SearchEpisodes from './SearchEpisodes';
 
+
 function EpisodePage() {
 
     const [episodes, setEpisodes] = useState([]);
@@ -20,7 +21,8 @@ function EpisodePage() {
 
     
     return(
-        <div>
+        <div className='episodes-page'>
+        
             <SearchEpisodes episodeSearch={episodeSearch} setEpisodeSearch={setEpisodeSearch} />
             <EpisodeList episodes={searchedEpisodes} />
 
